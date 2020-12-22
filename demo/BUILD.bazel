@@ -1,0 +1,15 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_binary(
+    name = "app_demo_parser",
+    srcs = ["main_demo.cpp"],
+    copts = ['-std=c++17', '-Wfatal-errors'],
+    deps = ["//src:nefparser"]
+)
+
+filegroup(
+    name = "srcs",
+    srcs = glob(["**"]),
+)
